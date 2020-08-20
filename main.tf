@@ -44,7 +44,7 @@ resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinux" {
   ]
 
   admin_ssh_key {
-
+public_key{}
   }
 
   os_disk {
