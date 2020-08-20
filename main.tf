@@ -22,7 +22,7 @@ resource "azurerm_subnet" "resource_sbnet" {
 }
 
 resource "azurerm_network_interface" "resource_interface1" {
-  name                = "example-nic"
+  name                = "Boogeyman-nic"
   location            = azurerm_resource_group.resource_gp1.location
   resource_group_name = azurerm_resource_group.resource_gp1.name
 
@@ -33,7 +33,7 @@ resource "azurerm_network_interface" "resource_interface1" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinux" {
+resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinuxMachine" {
   name                = "Boogeyman-machine"
   resource_group_name = azurerm_resource_group.resource_gp1.name
   location            = azurerm_resource_group.resource_gp1.location
@@ -44,7 +44,7 @@ resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinux" {
   ]
 
   admin_ssh_key {
-    username   = "azureuser"
+    username   = "adminuser"
     public_key = file("~/.ssh/id_rsa.pub")
   }
 
