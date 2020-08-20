@@ -35,8 +35,8 @@ resource "azurerm_network_interface" "resource_interface1" {
 
 resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinux" {
   name                = "Boogeyman-machine"
-  resource_group_name = azurerm_resource_group.resource_sbnet.name
-  location            = azurerm_resource_group.resource_sbnet.location
+  resource_group_name = azurerm_resource_group.resource_gp1.name
+  location            = azurerm_resource_group.resource_gp1.location
   size                = "Standard_F2"
   admin_username      = "adminuser"
   network_interface_ids = [
