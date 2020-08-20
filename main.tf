@@ -45,7 +45,7 @@ resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinuxMachine" {
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
   network_interface_ids = [
-    azurerm_network_interface.example.id,
+    azurerm_network_interface.resource_interface1.id,
   ]
 
   os_disk {
