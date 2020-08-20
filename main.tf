@@ -18,7 +18,7 @@ resource "azurerm_subnet" "resource_sbnet" {
   name                 = "internal"
   resource_group_name  = azurerm_resource_group.resource_gp1.name
   virtual_network_name = azurerm_virtual_network.resource_vnet1.name
-  address_prefixes       = "10.0.2.0/24"
+  address_prefix       = "10.0.2.0/24"
 }
 
 resource "azurerm_network_interface" "resource_interface1" {
