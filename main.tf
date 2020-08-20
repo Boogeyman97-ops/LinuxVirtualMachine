@@ -43,10 +43,14 @@ resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinuxMachine" {
   location            = azurerm_resource_group.resource_gp1.location
   size                = "Standard_F2"
   admin_username      = "adminuser"
-  admin_password      = "P@$$w0rd1234!"
   network_interface_ids = [
     azurerm_network_interface.resource_interface1.id,
   ]
+
+  admin_ssh_key {
+    username   = "adminuser"
+    public_key = file("~/.ssh/id_rsa.pub")
+  }
 
   os_disk {
     caching              = "ReadWrite"
@@ -54,9 +58,9 @@ resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinuxMachine" {
   }
 
   source_image_reference {
-    publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = "2016-Datacenter"
+    publisher = "Canonical"
+    offer     = "UbuntuServer"
+    sku       = "16.04-LTS"
     version   = "latest"
   }
 }
