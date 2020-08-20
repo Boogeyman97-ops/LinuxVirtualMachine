@@ -44,7 +44,7 @@ resource "azurerm_linux_virtual_machine" "BoogeymanVirtualLinux" {
   ]
 
   admin_ssh_key {
-    username   = "adminuser"
+    username   = "azureuser"
     public_key = file("~/.ssh/id_rsa.pub")
   }
 
